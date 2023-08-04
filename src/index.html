@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <link rel="stylesheet" href="index.css" />
+    <script>
+      function predict() {
+        const fileInput = document.getElementById("fileInput");
+        const file = fileInput.files[0];
+
+        if (!file) {
+          alert("Please select a file to upload.");
+          return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        fetch("http://localhost:5000/predict", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Upload successful:", data);
+            document.getElementById("prediction").textContent =
+              data["class_name"];
+            document.getElementById("filePath").textContent = file.path;
+          })
+          .catch((error) => {
+            console.error("Error uploading the file:", error);
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="screen1">
+        <h1>Brain tumor detection on MRI images</h1>
+        <input
+          type="file"
+          class="bn3637 bn37"
+          onchange="predict()"
+          id="fileInput"
+        />
+        <button type="button" class="bn3637 bn38">Source</button>
+        <p id="filePath">Select File</p>
+        <p id="prediction"></p>
+      </div>
+      <div class="screen2">
+        <iframe
+          src="https://www.kaggle.com/embed/ar5entum/cnn-brain-tumor-detection-96-accuracy?kernelSessionId=138592033"
+          height="800"
+          title="CNN brain tumor detection"
+        >
+          Internet Unavailable
+        </iframe>
+      </div>
+    </div>
+  </body>
+</html>

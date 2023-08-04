@@ -1,0 +1,98 @@
+/*
+ * @NOTE: Prepend a `~` to css file paths that are in your node_modules
+ *        See https://github.com/webpack-contrib/sass-loader#imports
+ */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;500;600;700&display=swap");
+
+body {
+  font-family: "Inconsolata", monospace;
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+}
+
+.screen1 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2f2f2f;
+  color: #efefff;
+}
+
+.screen2 {
+  width: 50vw;
+  background-color: #efefff;
+  color: #2f2f2f;
+  overflow: hidden;
+}
+
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  color: #efefff;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+}
+
+h1 {
+  font-size: 2.5vw;
+  font-weight: 200;
+}
+
+.bn37 {
+  background-color: #efefff;
+  color: #2f2f2f;
+  border-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bn37:hover {
+  background-color: #60605e;
+  color: #efefff;
+}
+
+.bn38 {
+  border-color: transparent;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bn38:hover {
+  background-color: #60605e;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #7b7b7b;
+  color: #2f2f2f;
+}
+
+@media screen and (max-width: 950px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .screen1 {
+    flex: none;
+    height: 100vh;
+  }
+
+  .screen2 {
+    flex: none;
+    height: 100vh;
+    width: 100vw;
+  }
+}
