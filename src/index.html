@@ -26,6 +26,7 @@
             console.log("Upload successful:", data);
             document.getElementById("prediction").textContent =
               data["class_name"];
+            document.getElementById("image-out").src = file.path;
             document.getElementById("filePath").textContent = file.path;
           })
           .catch((error) => {
@@ -47,6 +48,7 @@
         <button type="button" class="bn3637 bn38">Source</button>
         <p id="filePath">Select File</p>
         <p id="prediction"></p>
+        <img src="" alt="Image" id="image-out" />
       </div>
       <div class="screen2">
         <iframe
