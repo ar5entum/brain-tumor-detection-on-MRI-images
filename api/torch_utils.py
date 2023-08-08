@@ -44,7 +44,7 @@ class Net(nn.Module):
 
 model = Net()
 
-PATH = "weights.pth"
+PATH = "api/weights.pth"
 device = torch.device('cpu')
 model.load_state_dict(torch.load(PATH, map_location=device))
 model.eval()

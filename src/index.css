@@ -96,3 +96,6 @@ iframe {
     width: 100vw;
   }
 }
+#image-out {
+  display: none;
+}

@@ -31,3 +31,5 @@ def predict():
             return jsonify(data)
         except:
             return jsonify({'error': 'error during prediction'})
+if __name__ == "__main__":
+    app.run()

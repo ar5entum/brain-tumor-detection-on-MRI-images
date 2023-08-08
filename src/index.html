@@ -27,6 +27,7 @@
             document.getElementById("prediction").textContent =
               data["class_name"];
             document.getElementById("image-out").src = file.path;
+            document.getElementById("image-out").style.display = "block";
             document.getElementById("filePath").textContent = file.path;
           })
           .catch((error) => {
